@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Getters and Setters</h2>
+
+<p>Perfect for creating counters:</p>
+
+<p id="demo"></p>
+
+<!-- Add buttons for interaction -->
+<button onclick="operateCounter('add', 5)">Add</button>
+<button onclick="operateCounter('subtract', 5)">Subtract</button>
+<button onclick="operateCounter('increment')">Increment</button>
+<button onclick="operateCounter('decrement')">Decrement</button>
+
+<script>
+// Define an object
+const obj = { counter: 0 };
+
+// Define Setters and Getters
+Object.defineProperty(obj, "reset", {
+  get: function () { this.counter = 0; }
+});
+Object.defineProperty(obj, "increment", {
+  get: function () { this.counter++; }
+});
+Object.defineProperty(obj, "decrement", {
+  get: function () { this.counter--; }
+});
+Object.defineProperty(obj, "add", {
+  set: function (value) { this.counter += value; }
+});
+Object.defineProperty(obj, "subtract", {
+  set: function (value) { this.counter -= value; }
+});
+
+// Function to perform operations on the counter
+function operateCounter(operation, value) {
+  switch (operation) {
+    case 'reset':
+      obj.reset;
+      break;
+    case 'increment':
+      obj.increment;
+      break;
+    case 'decrement':
+      obj.decrement;
+      break;
+    case 'add':
+      obj.add = value;
+      break;
+    case 'subtract':
+      obj.subtract = value;
+      break;
+    default:
+      console.error("Invalid operation");
+  }
+  
+  // Update the counter display
+  document.getElementById("demo").innerHTML = obj.counter;
+}
+
+// Initialize the counter display
+document.getElementById("demo").innerHTML = obj.counter;
+</script>
+
+</body>
+</html>
