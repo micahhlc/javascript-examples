@@ -9,7 +9,7 @@
     <script>
       async function loadDoc() {
         try {
-          let res = await fetch("sample.txt");
+          let res = await fetch("fetch_sample.txt");
           let value = await res.text();
           document.getElementById("demo").innerHTML = value;
         } catch (err) {

@@ -19,14 +19,3 @@ console.log(add()); // Output: 3
 
 console.log(add.getCounter()); // Output: 3
 
-const getCounter = () => {
-  let counter = 0;
-  return {
-    get: () => counter,
-    add: () => ++counter,
-    minus: () => --counter,
-  };
-};
-
-let x = getCounter();
-console.log(x.get());
